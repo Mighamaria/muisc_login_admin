@@ -1,0 +1,111 @@
+
+<div class="user-dashboard">
+  <div class="user">
+
+    <div class="search-create">
+      <div class="create-button-container">
+        <button id="createButton" class="create-button" (click)="showForm()">Create</button>
+      </div>
+
+      <div  class="search-bar">
+        <app-search></app-search>
+      </div>
+
+    </div>
+
+
+  <div *ngIf="showFormFlag" class="create-form">
+    <!-- Add your form elements here -->
+    <input type="text" name="title" placeholder="Title" />
+    <input type="text" name="description" placeholder="Description" />
+    <button (click)="submitForm()">Submit</button>
+  </div>
+
+  <section class="slideshow-section">
+    <h3 class="section-banner">Genre</h3>
+    <div class="d-flex justify-content-center">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li *ngFor="let song of newReleasedSongs; let i = index" [class.active]="i === slideIndex" (click)="goToSlide(i)"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div *ngFor="let song of newReleasedSongs; let i = index" class="carousel-item" [class.active]="i === slideIndex">
+            <img class="d-block" [src]="song.imageUrl" alt="Slide {{i + 1}}">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev" (click)="previousSlide()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next" (click)="nextSlide()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="slideshow-section">
+    <h3 class="section-banner">Languages</h3>
+    <div class="d-flex justify-content-center">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li *ngFor="let song of newReleasedSongs1; let i = index" [class.active]="i === slideIndex" (click)="goToSlide(i)"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div *ngFor="let song of newReleasedSongs1; let i = index" class="carousel-item" [class.active]="i === slideIndex">
+            <img class="d-block" [src]="song.imageUrl" alt="Slide {{i + 1}}">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev" (click)="previousSlide()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next" (click)="nextSlide()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="slideshow-section">
+    <h3 class="section-banner">Artist Name</h3>
+    <div class="d-flex justify-content-center">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li *ngFor="let song of newReleasedSongs2; let i = index" [class.active]="i === slideIndex" (click)="goToSlide(i)"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div *ngFor="let song of newReleasedSongs2; let i = index" class="carousel-item" [class.active]="i === slideIndex">
+            <img class="d-block" [src]="song.imageUrl" alt="Slide {{i + 1}}">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev" (click)="previousSlide()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next" (click)="nextSlide()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<app-footer></app-footer>
+</div>
+
+
+<!-- Pop-up window -->
+<!-- <div class="popup">
+  <div class="popup-content">
+    Add your search item details here 
+    <h2>Search Item Details</h2>
+   
+     Add your add and rate buttons here 
+    <button class="add-button">Add</button>
+    <button class="rate-button">Rate</button>
+    <span class="close">&times;</span>
+  </div>
+</div> -->
